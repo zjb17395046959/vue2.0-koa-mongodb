@@ -1,0 +1,58 @@
+{
+  "id": "2144209",
+  "name": "收银系统",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "356464",
+      "name": "商品",
+      "font_class": "shangpin",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "797063",
+      "name": "收银",
+      "font_class": "shouyin",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "4657672",
+      "name": "会员",
+      "font_class": "huiyuan-",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "6127265",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "6855694",
+      "name": "店铺",
+      "font_class": "dianpu",
+      "unicode": "e6d9",
+      "unicode_decimal": 59097
+    },
+    {
+      "icon_id": "12598991",
+      "name": "统计",
+      "font_class": "tongji",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "14288584",
+      "name": "商品",
+      "font_class": "shangpin1",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    }
+  ]
+}
