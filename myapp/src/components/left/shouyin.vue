@@ -6,7 +6,7 @@
                 <p class="nav">{{index}}:</p>
                 <div class="nav-flex">
                     <div v-for="(val,idx) in item" :key="idx" class="content">
-                        <img :src="val.img" alt="图片">
+                        <img :src="val.img" alt="图片" :onerror="errImg">
                     <div class="content-one">
                         <p>{{val.title}}</p>
                         <p>￥:{{val.price}}元</p>
@@ -31,12 +31,14 @@
     </div>
 </template>
 <script>
+// import {getApi} from '../../assets/js/api';
 export default {
     name:'shouyin',
     data(){
         return{
+            errImg:'this.src="' + require('../../assets/img/tang2.jpg') + '"' ,
             list:[
-                {id:1,type:"面食",title:"刀削面",price:1.1,img:require('../../assets/img/main.jpg'),num:0},
+                {id:1,type:"面食",title:"刀削面",price:1.1,img:'../../assets/img/main.jpg',num:0},
                 {id:2,type:"面食",title:"手擀面",price:1.2,img:require("../../assets/img/mian.jpg"),num:0},
                 {id:3,type:"面食",title:"臊子面",price:0.1,img:require("../../assets/img/mian2.jpg"),num:0},
                 {id:4,type:"面食",title:"拌面",price:0.2,img:require("../../assets/img/mian3.jpg"),num:0},
@@ -70,7 +72,40 @@ export default {
             
         }
     },
-    created(){
+    async created(){
+        // var res =await getApi('/home/a');
+        // console.log(res);
+        //get
+        this.$axios({
+            url: '/api/home/a',
+            method: 'get',
+            }).then(res => {
+            console.table(res.data);
+        }).catch(msg=>{
+            console.log(msg);
+        });
+        // post请求
+        // this.$axios({
+        //     url: '/api/page/a',
+        //     method: 'post',
+        //     data: {
+        //         name: '小月'
+        //     }
+        //     }).then(res => {
+        //     console.log('请求结果：', res);
+        // });
+        // get请求
+        // this.$axios('/api/home/menu0',{
+        //    params:{
+        //         id:1,
+        //         title:'我是请求后台接口，并向后台传递参数'
+        //    }
+        // }).then(res=>{
+        //     console.log(res);
+        //     console.log('写入成功！')
+        // }).catch(msg=>{
+        //     console.log('写入失败！')
+        // })
         var obj = {}
         var a;
         this.list.forEach(item => {
